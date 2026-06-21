@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Home from "@/pages/Home";
@@ -14,7 +14,7 @@ import Register from "@/pages/Register";
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/listing/:id" element={<ListingDetail />} />
@@ -27,7 +27,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
         <Toaster position="top-center" />
-      </BrowserRouter>
+      </Router>
     </AuthProvider>
   );
 }
