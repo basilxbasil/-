@@ -1,6 +1,7 @@
-console.log("تم تشغيل تطبيق 'دورها' بنجاح!");
-
 document.addEventListener("DOMContentLoaded", () => {
-    const app = document.getElementById("app");
-    console.log("الهيكل الأساسي جاهز للعمل.");
+    const btn = document.getElementById("actionButton");
+    
+    btn.addEventListener("click", () => {
+        alert("أهلاً بك في عالم البرمجة! رحلتك مع 'دورها' بدأت الآن.");
+    });
 });
