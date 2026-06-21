@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,12 +12,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: List Files (كشف مكان الملفات)
-        run: |
-          echo "محتويات المجلد الحالي:"
-          ls -R
-          
       - name: Install and Build
+        # هنا نخبر النظام أن يذهب للمجلد الصحيح أولاً
+        working-directory: . 
         run: |
           npm install
           npm run build
+          
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # هذا هو المجلد الذي يضع فيه React ملفات الموقع بعد البناء
+          path: 'build'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
