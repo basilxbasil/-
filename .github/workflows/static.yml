@@ -25,11 +25,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 24
 
       - name: Install Dependencies
-        run: npm ci # أفضل وأسرع من npm install في السيرفرات
+        run: npm install
 
       - name: Build Project
         run: npm run build
@@ -37,8 +36,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # تم التعديل إلى dist لأن الملف في الخارج والمشروع غالباً Vite
-          path: './dist' 
+          path: './dist'
 
   deploy:
     environment:
