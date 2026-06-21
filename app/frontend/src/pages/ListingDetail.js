@@ -26,30 +26,31 @@ export default function ListingDetail() {
 
   return (
     <div className="pb-24">
-           <img 
+      <div className="p-6">
+        <img 
           src={listing.image || 'https://via.placeholder.com/600'} 
           alt={listing.title} 
           className="w-full h-64 object-cover rounded-xl mb-6"
           onError={(e) => e.target.src = 'https://via.placeholder.com/600'} 
         />
-
-   <div className="p-6">
         <h1 className="text-2xl font-bold">{listing.title}</h1>
-        <p className="text-xl font-semibold text-primary mt-2">{listing.price ? `${listing.price} ر.س` : "قابل للتفاوض"}</p>
+        <p className="text-xl font-semibold text-primary mt-2">
+          {listing.price ? `${listing.price} ريال` : "غير محدد"}
+        </p>
         <div className="mt-4 p-4 bg-white rounded-xl border">
           <h3 className="font-bold mb-2">الوصف</h3>
           <p className="text-ink-2">{listing.description}</p>
         </div>
-        
-        {user && user.id !== listing.seller_id && (
-          <button 
-            onClick={() => navigate(`/chats/${listing.id}`)} // اختصار مبسط للدردشة
-            className="w-full mt-6 py-4 bg-primary text-white rounded-xl font-bold"
-          >
-            تواصل مع البائع
-          </button>
-        )}
       </div>
+
+      {user && user.id !== listing.seller_id && (
+        <button
+          onClick={() => navigate(`/chats/${listing.id}`)}
+          className="w-full mt-6 py-4 bg-primary text-white rounded-xl font-bold"
+        >
+          تواصل مع البائع
+        </button>
+      )}
     </div>
   );
 }
