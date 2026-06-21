@@ -1,5 +1,21 @@
+:root {
+    --desert-sand: #e1c699;
+    --industrial-dark: #2d2926;
+    --accent: #b05c2a;
+}
+
 body {
-    text-align: center;
+    background-color: var(--industrial-dark);
+    color: var(--desert-sand);
     font-family: sans-serif;
-    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
 }
