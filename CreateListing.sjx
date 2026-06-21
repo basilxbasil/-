@@ -1,0 +1,49 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import AppShell from "@/components/AppShell";
+import { api, formatApiErrorDetail } from "@/lib/api";
+import { SAUDI_CITIES } from "@/lib/categories";
+
+export default function CreateListing() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({ title: "", price: "", city: "الرياض", description: "", open_for_offers: false });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await api.post("/listings", formData);
+      toast.success("تم إضافة الإعلان بنجاح!");
+      navigate("/");
+    } catch (err) {
+      toast.error(formatApiErrorDetail(err.response?.data?.detail));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <AppShell hideNav>
+      <div className="p-4">
+        <h1 className="text-xl font-bold mb-6">إضافة إعلان جديد</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input required placeholder="عنوان الإعلان" className="w-full p-3 border rounded-xl" onChange={(e) => setFormData({...formData, title: e.target.value})} />
+          <input type="number" placeholder="السعر (ر.س)" className="w-full p-3 border rounded-xl" onChange={(e) => setFormData({...formData, price: e.target.value})} />
+          <select className="w-full p-3 border rounded-xl" onChange={(e) => setFormData({...formData, city: e.target.value})}>
+            {SAUDI_CITIES.map(c => <option key={c}>{c}</option>)}
+          </select>
+          <textarea required placeholder="وصف الإعلان..." className="w-full p-3 border rounded-xl h-32" onChange={(e) => setFormData({...formData, description: e.target.value})} />
+          <label className="flex items-center gap-2">
+            <input type="checkbox" onChange={(e) => setFormData({...formData, open_for_offers: e.target.checked})} />
+            <span>قابل للتفاوض</span>
+          </label>
+          <button disabled={loading} className="w-full bg-[var(--brand)] text-white p-3 rounded-xl font-bold">
+            {loading ? "جاري الإضافة..." : "نشر الإعلان"}
+          </button>
+        </form>
+      </div>
+    </AppShell>
+  );
+}
