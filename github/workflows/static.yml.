@@ -12,16 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: List Directory Structure (للكشف عن مكان الملفات)
+        run: ls -R
+      
       - name: Install and Build
         run: |
           npm install
-          # هذا السطر سيقوم بالبناء مع التأكيد على المسار
           npm run build
           
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # هذا المجلد هو المكان الذي تخرج فيه ملفات React بعد البناء
+          # إذا فشل النشر، سنغير هذا المسار إلى 'dist' أو '.'
           path: 'build'
 
   deploy:
