@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: List Files (كشف مكان الملفات)
+        run: ls -R
+      
       - name: Install and Build
         run: |
           npm install
