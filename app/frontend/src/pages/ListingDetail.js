@@ -26,7 +26,14 @@ export default function ListingDetail() {
 
   return (
     <div className="pb-24">
-      <div className="p-6">
+           <img 
+          src={listing.image || 'https://via.placeholder.com/600'} 
+          alt={listing.title} 
+          className="w-full h-64 object-cover rounded-xl mb-6"
+          onError={(e) => e.target.src = 'https://via.placeholder.com/600'} 
+        />
+
+   <div className="p-6">
         <h1 className="text-2xl font-bold">{listing.title}</h1>
         <p className="text-xl font-semibold text-primary mt-2">{listing.price ? `${listing.price} ر.س` : "قابل للتفاوض"}</p>
         <div className="mt-4 p-4 bg-white rounded-xl border">
