@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, LogOut, ShieldCheck, Edit3, Save } from "lucide-react";
 import { toast } from "sonner";
-import AppShell from "@/components/AppShell";
-import ListingCard from "@/components/ListingCard";
-import { api, formatApiErrorDetail } from "@/lib/api";
-import { useAuth } from "@/contexts/AuthContext";
-import { SAUDI_CITIES } from "@/lib/categories";
+import AppShell from "../components/AppShell";
+import ListingCard from "../components/ListingCard";
+import { api, formatApiErrorDetail } from "../lib/api";
+import { useAuth } from "../contexts/AuthContext";
+import { SAUDI_CITIES } from "../lib/categories";
 
 export default function Profile() {
   const { user, logout, setUser } = useAuth();
