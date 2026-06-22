@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { ArrowRight, Send } from "lucide-react";
-import AppShell from "@/components/AppShell";
-import { api, fileUrl, formatApiErrorDetail } from "@/lib/api";
-import { useAuth } from "@/contexts/AuthContext";
+import AppShell from "../components/AppShell";
+import { api, fileUrl, formatApiErrorDetail } from "../lib/api";
+import { useAuth } from "../contexts/AuthContext";
 import { toast } from "sonner";
 
 export default function ChatRoom() {
