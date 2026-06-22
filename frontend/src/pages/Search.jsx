@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowRight, Search as SearchIcon, X } from "lucide-react";
-import AppShell from "@/components/AppShell";
-import ListingCard from "@/components/ListingCard";
-import { api } from "@/lib/api";
-import { SAUDI_CITIES } from "@/lib/categories";
+import AppShell from "../components/AppShell";
+import ListingCard from "../components/ListingCard";
+import { api } from "../lib/api";
+import { SAUDI_CITIES } from "../lib/categories";
 
 export default function Search() {
   const [params, setParams] = useSearchParams();
