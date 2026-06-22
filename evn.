@@ -1,0 +1,13 @@
+# قاعدة البيانات
+MONGO_URL=mongodb://localhost:27017
+DB_NAME=durraha
+
+# الأمان
+JWT_SECRET=your_super_secret_random_string_here
+
+# الذكاء الاصطناعي
+EMERGENT_LLM_KEY=your_api_key_here
+
+# الروابط
+FRONTEND_URL=http://localhost:3000
+BACKEND_URL=http://localhost:8000
