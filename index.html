@@ -3,63 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورها - سوق الخردة وإعادة التدوير</title>
+    <title>دورها - سوق الخردة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', sans-serif; background-color: #f3f4f6; }
-        .category-btn:active { transform: scale(0.95); }
+        body { font-family: 'Tajawal', sans-serif; }
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:active { transform: translateY(2px); }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex justify-center items-start">
-    <div class="w-full max-w-md bg-white min-h-screen shadow-lg relative pb-24 flex flex-col">
+<body class="bg-gray-100 flex justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white shadow-2xl min-h-screen flex flex-col relative overflow-hidden">
         
-        <div class="p-4 flex justify-between items-center bg-white border-b border-gray-100">
-            <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full"><i class="fa-regular fa-bell text-xl"></i></button>
-            <div class="text-right">
-                <h1 class="text-lg font-bold text-gray-900">دورها</h1>
+        <!-- Header -->
+        <header class="p-4 border-b flex justify-between items-center bg-white">
+            <div class="w-10 h-10 bg-[#e04f26] rounded-full flex items-center justify-center text-white font-bold shadow-lg">د</div>
+            <h1 class="font-black text-lg">دورها</h1>
+            <button><i class="fa-solid fa-bell text-gray-500"></i></button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 space-y-6">
+            <!-- Search -->
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute right-4 top-4 text-gray-400"></i>
+                <input type="text" placeholder="ابحث عن خردة، أجهزة..." class="w-full bg-gray-50 p-3 pr-12 rounded-2xl outline-none border border-gray-100">
             </div>
-            <div class="w-10 h-10 bg-[#e04f26] text-white rounded-full flex items-center justify-center font-black text-xl shadow-md">د</div>
-        </div>
 
-        <div class="p-4 space-y-5 flex-1 overflow-y-auto">
-            
-            <div class="space-y-3">
-                <h3 class="text-sm font-bold text-gray-800">الأقسام</h3>
-                <div class="grid grid-cols-4 gap-3 text-center">
-                    
-                    <button class="category-btn flex flex-col items-center space-y-1 group">
-                        <div class="w-14 h-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:border-[#e04f26] transition">
-                            <i class="fa-solid fa-magnet text-xl text-gray-500 group-hover:text-[#e04f26]"></i>
-                        </div>
-                        <span class="text-[11px] font-medium text-gray-600">معادن</span>
-                    </button>
-
-                    <button class="category-btn flex flex-col items-center space-y-1 group">
-                        <div class="w-14 h-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:border-[#e04f26] transition">
-                            <i class="fa-solid fa-laptop text-xl text-gray-500 group-hover:text-[#e04f26]"></i>
-                        </div>
-                        <span class="text-[11px] font-medium text-gray-600">إلكترونيات</span>
-                    </button>
-
-                    <button class="category-btn flex flex-col items-center space-y-1 group">
-                        <div class="w-14 h-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:border-[#e04f26] transition">
-                            <i class="fa-solid fa-couch text-xl text-gray-500 group-hover:text-[#e04f26]"></i>
-                        </div>
-                        <span class="text-[11px] font-medium text-gray-600">أثاث</span>
-                    </button>
-
-                    <button class="category-btn flex flex-col items-center space-y-1 group">
-                        <div class="w-14 h-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:border-[#e04f26] transition">
-                            <i class="fa-solid fa-blender text-xl text-gray-500 group-hover:text-[#e04f26]"></i>
-                        </div>
-                        <span class="text-[11px] font-medium text-gray-600">أجهزة</span>
-                    </button>
-                </div>
+            <!-- Categories Grid (Inspired by Emergent) -->
+            <div class="grid grid-cols-4 gap-4">
+                <button class="nav-link flex flex-col items-center gap-2">
+                    <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-[#e04f26] text-xl"><i class="fa-solid fa-magnet"></i></div>
+                    <span class="text-[10px] font-bold">معادن</span>
+                </button>
+                <button class="nav-link flex flex-col items-center gap-2">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-xl"><i class="fa-solid fa-laptop"></i></div>
+                    <span class="text-[10px] font-bold">إلكترونيات</span>
+                </button>
+                <button class="nav-link flex flex-col items-center gap-2">
+                    <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 text-xl"><i class="fa-solid fa-couch"></i></div>
+                    <span class="text-[10px] font-bold">أثاث</span>
+                </button>
+                <button class="nav-link flex flex-col items-center gap-2">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 text-xl"><i class="fa-solid fa-snowflake"></i></div>
+                    <span class="text-[10px] font-bold">مكيفات</span>
+                </button>
             </div>
-            
-        </div>
+        </main>
+
+        <!-- Navigation Bar (Emergent Style) -->
+        <footer class="p-4 border-t flex justify-between items-center bg-white pb-6">
+            <button class="nav-link text-gray-400 flex flex-col items-center"><i class="fa-solid fa-house text-xl text-[#e04f26]"></i><span class="text-[10px] font-bold mt-1">الرئيسية</span></button>
+            <button class="nav-link text-gray-400 flex flex-col items-center"><i class="fa-solid fa-magnifying-glass text-xl"></i><span class="text-[10px] font-bold mt-1">بحث</span></button>
+            <button class="bg-[#e04f26] text-white w-14 h-14 rounded-full shadow-lg -mt-10 border-4 border-white"><i class="fa-solid fa-plus text-xl"></i></button>
+            <button class="nav-link text-gray-400 flex flex-col items-center"><i class="fa-solid fa-comments text-xl"></i><span class="text-[10px] font-bold mt-1">المحادثات</span></button>
+            <button class="nav-link text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user text-xl"></i><span class="text-[10px] font-bold mt-1">حسابي</span></button>
+        </footer>
     </div>
 </body>
 </html>
