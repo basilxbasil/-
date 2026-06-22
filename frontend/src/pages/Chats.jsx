@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import AppShell from "@/components/AppShell";
-import { api, fileUrl } from "@/lib/api";
+import AppShell from "../components/AppShell";
+import { api, fileUrl } from "../lib/api";
 
 function fmtTime(iso) {
   if (!iso) return "";
