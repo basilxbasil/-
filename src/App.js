@@ -1,19 +1,10 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home"; // نحتاج ننشئ هذا المجلد
-import Login from "./pages/Login";
-import AddListing from "./pages/AddListing";
+import React from 'react';
 
 function App() {
   return (
-    <div dir="rtl" className="font-sans">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/add" element={<AddListing />} />
-        </Routes>
-      </BrowserRouter>
+    <div className="p-10 text-center">
+      <h1 className="text-3xl font-bold">مرحباً في تطبيق دورها</h1>
+      <p>الموقع قيد التطوير والربط...</p>
     </div>
   );
 }
