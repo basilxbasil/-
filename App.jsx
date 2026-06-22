@@ -28,7 +28,6 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
-        <Toaster position="top-center" richColors closeButton />
       </BrowserRouter>
     </AuthProvider>
   );
