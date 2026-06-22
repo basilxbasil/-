@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { ArrowRight, MapPin, Eye, MessageCircle, Phone, Trash2, ImageOff } from "lucide-react";
 import { toast } from "sonner";
-import AppShell from "@/components/AppShell";
-import { api, fileUrl, formatApiErrorDetail } from "@/lib/api";
-import { useAuth } from "@/contexts/AuthContext";
+import AppShell from "../components/AppShell";
+import { api, fileUrl, formatApiErrorDetail } from "../lib/api";
+import { useAuth } from "../contexts/AuthContext";
 
 function formatPrice(price, open) {
   if (open && (price == null || price === 0)) return "قابل للتفاوض";
