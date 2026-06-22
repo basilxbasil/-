@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Users, Package, Ban, CircleCheck, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import AppShell from "@/components/AppShell";
-import { api, formatApiErrorDetail } from "@/lib/api";
+import AppShell from "../components/AppShell";
+import { api, formatApiErrorDetail } from "../lib/api";
 
 export default function Admin() {
   const navigate = useNavigate();
