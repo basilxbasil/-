@@ -13,7 +13,7 @@ export default function ListingCard({ listing }) {
     <Link
       to={`/listing/${listing.id}`}
       className="listing-card bg-white border border-[var(--line)] rounded-2xl overflow-hidden shadow-sm flex flex-col hover:border-[var(--ink-3)] transition"
-      data-testid={`listing-card-${listing.id}`}
+      ={`listing-card-${listing.id}`}
     >
       <div className="aspect-[4/3] w-full bg-[var(--subtle)] relative overflow-hidden">
         {listing.images?.length ? (
